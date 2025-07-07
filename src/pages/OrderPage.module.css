@@ -1,0 +1,141 @@
+.page {
+    padding: 20px 0;
+}
+
+.page h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    background: var(--surface-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.section p {
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.item a {
+    flex-grow: 1;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.item a:hover {
+    color: var(--primary-color);
+}
+
+.summary {
+    background: var(--surface-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    align-self: flex-start;
+    /* 'נדביק' אותו למעלה */
+}
+
+.summary h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.summary p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary p:last-of-type {
+    font-size: 18px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.alertSuccess, .alertDanger {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.alertSuccess {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alertDanger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.payButton {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+}
+
+.payButton:hover {
+    opacity: 0.9;
+}
+
+.centerText {
+    text-align: center;
+    padding: 50px;
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+        /* עמודה אחת */
+    }
+}

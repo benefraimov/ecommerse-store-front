@@ -1,0 +1,73 @@
+/* client/src/components/CartPopup.module.css */
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.summary {
+    text-align: right;
+    color: #555;
+}
+
+.summary p {
+    margin: 5px 0;
+}
+
+.summary strong {
+    font-weight: 700;
+    color: #000;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.actions button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.secondaryButton {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    color: #333;
+}
+
+.secondaryButton:hover {
+    background-color: #e0e0e0;
+}
+
+.primaryButton {
+    background-color: #007bff;
+    color: white;
+}
+
+.primaryButton:hover {
+    background-color: #0056b3;
+}

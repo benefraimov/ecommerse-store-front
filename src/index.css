@@ -1,0 +1,80 @@
+/* client/src/index.css */
+
+/* 1. הגדרת משתני צבע גלובליים */
+:root {
+  --primary-color: #005bff;
+  /* כחול ראשי */
+  --primary-color-hover: #0049c6;
+  --secondary-color: #f4f7f6;
+  /* רקע כללי */
+  --text-color: #2c3e50;
+  /* טקסט כהה */
+  --text-color-light: #7f8c8d;
+  /* טקסט אפרפר */
+  --border-color: #e0e0e0;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --surface-color: #ffffff;
+  /* רקע של קלפים ורכיבים */
+}
+
+/* 2. איפוס וסגנונות בסיסיים */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* קבע שהגובה המינימלי הוא 100% מגובה המסך */
+}
+
+.main-content {
+  flex-grow: 1;
+  /* קבע שאזור התוכן יתפוס את כל המקום הפנוי וידחוף את הפוטר למטה */
+  width: 100%;
+  max-width: 1200px;
+  /* הגבלת רוחב התוכן במסכים גדולים */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-color-hover);
+}
+
+/* 4. עיצוב גלובלי לכפתורים */
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color-hover);
+}

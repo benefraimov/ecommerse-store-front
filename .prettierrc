@@ -1,0 +1,6 @@
+{
+  "printWidth": 80,
+  "jsxSingleQuote": false,
+  "bracketSameLine": false,
+  "singleAttributePerLine": true
+}

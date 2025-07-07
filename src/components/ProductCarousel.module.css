@@ -1,0 +1,90 @@
+/* client/src/components/ProductCarousel.module.css (גרסה חדשה) */
+.slider {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  margin: 0 auto 40px auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slideCaption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.leftArrow {
+  left: 32px;
+}
+
+.rightArrow {
+  right: 32px;
+}
+
+.loader {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 250px;
+  }
+  .slideCaption {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .arrow {
+      padding: 5px;
+  }
+  .arrow svg {
+      width: 30px;
+      height: 30px;
+  }
+}

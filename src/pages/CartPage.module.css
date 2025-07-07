@@ -1,0 +1,152 @@
+.page {
+    padding: 20px 40px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 70px);
+    /* 70px is the header height */
+}
+
+.page h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.cartLayout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.cartItems {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cartItems h2 {
+    text-align: center;
+    color: #777;
+    margin-top: 40px;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cartItem:last-child {
+    border-bottom: none;
+}
+
+.itemImage {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.itemName {
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+}
+
+.itemName:hover {
+    color: #007bff;
+}
+
+.itemPrice {
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.itemQty {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 70px;
+}
+
+.removeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+}
+
+.removeButton:hover {
+    color: #dc3545;
+}
+
+.cartSummary {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    align-self: flex-start;
+    /* Prevents stretching */
+}
+
+.cartSummary h2 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cartSummary p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.cartSummary button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.cartSummary button:hover {
+    background-color: #218838;
+}
+
+.cartSummary button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 992px) {
+    .cartLayout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .cartItem {
+        flex-wrap: wrap;
+    }
+
+    .itemName {
+        width: 100%;
+        order: -1;
+        /* Puts name on top */
+        margin-bottom: 10px;
+    }
+}

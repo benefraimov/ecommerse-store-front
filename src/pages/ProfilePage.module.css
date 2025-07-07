@@ -1,0 +1,51 @@
+.profileLayout {
+    display: flex;
+    gap: 30px;
+}
+
+.sidebar {
+    flex: 1;
+    max-width: 200px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.link:hover {
+    background: #e9ecef;
+}
+
+.activeLink {
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.content {
+    flex: 3;
+}
+
+@media (max-width: 768px) {
+    .profileLayout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        max-width: 100%;
+    }
+}

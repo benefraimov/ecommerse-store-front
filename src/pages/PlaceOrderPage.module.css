@@ -1,0 +1,146 @@
+/* client/src/pages/PlaceOrderPage.module.css */
+.page {
+    padding: 20px 40px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 70px);
+}
+
+.page h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.main {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section h2 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.item a {
+    flex-grow: 1;
+    text-decoration: none;
+    color: #333;
+}
+
+.item a:hover {
+    text-decoration: underline;
+}
+
+.item span {
+    font-size: 14px;
+    color: #777;
+}
+
+.summary {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.summary h2 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.summary p {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.summary p strong {
+    font-size: 18px;
+}
+
+.summary button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.summary button:hover {
+    background-color: #218838;
+}
+
+.summary button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}

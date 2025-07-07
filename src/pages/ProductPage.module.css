@@ -1,0 +1,129 @@
+/* client/src/pages/ProductPage.module.css */
+.page {
+    padding: 40px;
+}
+
+.centerText {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.backLink {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.productContainer {
+    display: flex;
+    gap: 40px;
+}
+
+.imageContainer {
+    flex: 1;
+}
+
+.imageContainer img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.detailsContainer {
+    flex: 1;
+}
+
+.productName {
+    font-size: 32px;
+    margin-top: 0;
+}
+
+.productDescription {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.divider {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stock {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.inStock {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.outOfStock {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.addToCartButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addToCartButton:hover {
+    background-color: #0056b3;
+}
+
+.disabledButton {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.disabledButton:hover {
+    background-color: #cccccc;
+}
+
+.qty {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.qty select {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 15px;
+    }
+
+    .productContainer {
+        flex-direction: column;
+        /* גורם לעמודות להיות אחת מתחת לשניה */
+    }
+
+    .productName {
+        font-size: 24px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .addToCartButton {
+        width: 100%;
+        padding: 15px;
+    }
+}

@@ -1,0 +1,42 @@
+.quantitySelector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: #f8f9fa;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #e9ecef;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.button:first-child {
+    border-right: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+}
+
+.button:last-child {
+    border-left: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.quantity {
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+}
