@@ -51,7 +51,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className={styles.conatiner}>
+    <div className={styles.container}>
       <div className={styles.formWrapper}>
         <h1 className={styles.title}>התחברות לחשבון</h1>
         <form onSubmit={onSubmit}>

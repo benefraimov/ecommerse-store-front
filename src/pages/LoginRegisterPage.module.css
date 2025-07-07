@@ -29,7 +29,7 @@
 
 .inputGroup input {
   width: 100%;
-  padding: 12px 12px 12px 40px; /* Padding for icon */
+  padding: 12px 40px 12px 12px; /* Padding for icon */
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;

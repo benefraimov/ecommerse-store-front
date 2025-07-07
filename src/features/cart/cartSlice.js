@@ -7,7 +7,6 @@ import { createOrder } from '../order/orderSlice';
 const saveGuestCartToStorage = (cartItems) => {
   localStorage.setItem('guestCart', JSON.stringify(cartItems));
 };
-
 const getAuthConfig = (thunkAPI) => {
   const { auth: { user } } = thunkAPI.getState();
   return { headers: { Authorization: `Bearer ${user.token}` } };
@@ -43,7 +42,6 @@ export const addToCart = createAsyncThunk('cart/add', async ({ product, qty }, t
     return newCartItems;
   }
 });
-
 // פעולה שמופעלת מכפתורי הפלוס/מינוס בעגלה
 export const setCartItemQty = createAsyncThunk('cart/setQty', async ({ productId, qty }, thunkAPI) => {
   const { auth: { user }, cart: { cartItems } } = thunkAPI.getState();
@@ -59,7 +57,6 @@ export const setCartItemQty = createAsyncThunk('cart/setQty', async ({ productId
     return newCartItems;
   }
 });
-
 // פעולה להסרת פריט
 export const removeItemFromCart = createAsyncThunk('cart/remove', async (productId, thunkAPI) => {
   const { auth: { user }, cart: { cartItems } } = thunkAPI.getState();
@@ -73,18 +70,24 @@ export const removeItemFromCart = createAsyncThunk('cart/remove', async (product
     return newCartItems;
   }
 });
-
 // פעולה לטעינת עגלה ראשונית של משתמש מחובר
 export const fetchCart = createAsyncThunk('cart/fetch', async (_, thunkAPI) => {
   const { data } = await axios.get('/api/users/cart', getAuthConfig(thunkAPI));
   return data;
 });
 
-// === SLICE DEFINITION ===
+
+// --- SLICE DEFINITION ---
+
+// --- התיקון כאן ---
+const itemsFromGuestCart = JSON.parse(localStorage.getItem('guestCart'));
+const addressFromStorage = JSON.parse(localStorage.getItem('shippingAddress'));
+
 const initialState = {
-  cartItems: localStorage.getItem('guestCart') ? JSON.parse(localStorage.getItem('guestCart')) : [],
-  shippingAddress: localStorage.getItem('shippingAddress') ? JSON.parse(localStorage.getItem('shippingAddress')) : {},
-  paymentMethod: 'Credit Card', // נוסיף ערך ברירת מחדל
+  // נוודא ש-cartItems הוא תמיד מערך, גם אם ה-localStorage ריק או לא תקין
+  cartItems: Array.isArray(itemsFromGuestCart) ? itemsFromGuestCart : [],
+  shippingAddress: addressFromStorage || {},
+  paymentMethod: 'Credit Card',
   isLoading: false,
 };
 
