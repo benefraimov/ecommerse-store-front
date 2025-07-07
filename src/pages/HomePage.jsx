@@ -4,18 +4,22 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../features/products/productSlice";
 import ProductItem from "../components/ProductItem";
 import Paginate from "../components/Paginate";
-import styles from "./HomePage.module.css";
 import ProductCarousel from "../components/ProductCarousel";
 import useDocumentHead from "../hooks/useDocumentHead";
+import styles from "./HomePage.module.css";
 
 const HomePage = () => {
   useDocumentHead("ברוכים הבאים ל-E-Shop | קניות ברשת");
+
   const { pageNumber } = useParams() || 1;
   const dispatch = useDispatch();
 
-  const { products, page, pages, isLoading, isError, message } = useSelector(
-    (state) => state.products,
-  );
+  const productState = useSelector((state) => state.products);
+  // --- התיקון כאן ---
+  const products = Array.isArray(productState.products)
+    ? productState.products
+    : [];
+  const { page, pages, isLoading, isError, message } = productState;
 
   useEffect(() => {
     dispatch(fetchProducts(pageNumber));
@@ -25,16 +29,12 @@ const HomePage = () => {
     if (isLoading && products.length === 0) {
       return <h2>טוען מוצרים...</h2>;
     }
-
     if (isError) {
       return <h2>שגיאה: {message}</h2>;
     }
-
     if (!isLoading && products.length === 0) {
       return <h2>לא נמצאו מוצרים.</h2>;
     }
-
-    // החזרנו את התצוגה הרגילה, ללא תלות ב-isLoading וללא שינוי opacity
     return (
       <>
         <div className={styles.productGrid}>
