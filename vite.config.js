@@ -11,6 +11,7 @@ export default defineConfig({
       '/api': {
         // תועבר לשרת שלנו
         target: "https://ecommerse-api.zoomtech.co.il",
+        // target: "http://localhost:5001",
         // נחוץ כדי שהשרת המארח יתחלף כראוי
         changeOrigin: true,
       }

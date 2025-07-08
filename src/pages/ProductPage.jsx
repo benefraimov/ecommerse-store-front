@@ -16,8 +16,8 @@ const ProductPage = () => {
   const [qty, setQty] = useState(1); // 2. State לניהול הכמות
   const { id: productId } = useParams();
   const dispatch = useDispatch();
-
-  const { width } = useWindowSize();
+  const { cartItems } = useSelector((state) => state.cart);
+  // const { width } = useWindowSize();
 
   const {
     selectedProduct: product,
@@ -46,12 +46,16 @@ const ProductPage = () => {
   }, [productId, dispatch]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart({ product, qty }));
+    const existItem = cartItems.find((x) => x.product === product._id);
+    const currentQtyInCart = existItem ? existItem.qty : 0;
 
-    if (width > 768) {
-      // בדיקת רוחב מסך
-      dispatch(openCartPopup());
+    if (currentQtyInCart + qty > product.stock) {
+      toast.error("לא ניתן להוסיף כמות זו, המלאי אינו מספיק");
+      return;
     }
+
+    dispatch(addToCart({ product, qty }));
+    dispatch(openCartPopup());
   };
 
   if (isLoading || !product) {
